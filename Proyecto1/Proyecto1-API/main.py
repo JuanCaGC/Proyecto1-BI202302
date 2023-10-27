@@ -11,6 +11,10 @@ app = FastAPI()
 def make_predictions(dataModel: DataModel):
     df = pd.DataFrame(dataModel.dict(), columns=dataModel.dict().keys(), index=[0])
     df.columns = dataModel.columns()
-    model = load(r'.\Proyecto1\modelo.joblib')
+    model = load(r'C:\Users\charl\Proyecto1-BI202302\Proyecto1\modelo.joblib')
     result = model.predict(df)
     return result
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
