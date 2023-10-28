@@ -3,7 +3,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from DataModel import DataModel
 import joblib
 import pandas as pd
-# hay que agregar la siguiente linea en uvicorn-script.py y el modulos.py en la carpeta de Scripts del env
+
+#TODO hay que agregar la siguiente linea en uvicorn-script.py y el modulos.py en la carpeta de Scripts del env
 from modulos import TextWordTokenizer,TextPreprocessor,TextStemLemmatizer,TokensToTextTransformer
 
 app = FastAPI()

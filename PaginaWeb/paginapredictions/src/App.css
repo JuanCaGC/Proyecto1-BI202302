@@ -1,5 +1,18 @@
+/* App.css */
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 100vh;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f0f0ff; /* Fondo azul clarito */
+
+  font-size: 24px;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
 }
 
 .App-logo {

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import "./PredictionForm.css";
 function PredictionForm() {
   const [textosEspanol, setTextosEspanol] = useState("");
   const [prediction, setPrediction] = useState(null);
@@ -25,16 +25,15 @@ function PredictionForm() {
 
   return (
     <div>
-      <input
-        type="text"
+      <textarea
         placeholder="Textos en español"
         value={textosEspanol}
         onChange={(e) => setTextosEspanol(e.target.value)}
       />
-      <button onClick={handlePredictClick}>Predict</button>
+      <button onClick={handlePredictClick}>Predecir</button>
       {prediction !== null && (
         <div>
-          <h3>Prediction Result:</h3>
+          <h3>Resultado de la prediccion (con un 98% de precision):</h3>
           <p>{prediction}</p>
         </div>
       )}
