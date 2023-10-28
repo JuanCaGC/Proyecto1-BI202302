@@ -1,19 +1,17 @@
 import React, { useState } from "react";
 
 function PredictionForm() {
-  const [data, setData] = useState({ Textos_espanol: "", sgd: 0 });
+  const [textosEspanol, setTextosEspanol] = useState("");
   const [prediction, setPrediction] = useState(null);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
+  const handlePredictClick = async () => {
     try {
       const response = await fetch("http://127.0.0.1:8000/predict", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ Textos_espanol: textosEspanol }),
       });
 
       if (response.ok) {
@@ -27,21 +25,13 @@ function PredictionForm() {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Textos en español"
-          value={data.Textos_espanol}
-          onChange={(e) => setData({ ...data, Textos_espanol: e.target.value })}
-        />
-        <input
-          type="number"
-          placeholder="sgd"
-          value={data.sgd}
-          onChange={(e) => setData({ ...data, sgd: e.target.value })}
-        />
-        <button type="submit">Predict</button>
-      </form>
+      <input
+        type="text"
+        placeholder="Textos en español"
+        value={textosEspanol}
+        onChange={(e) => setTextosEspanol(e.target.value)}
+      />
+      <button onClick={handlePredictClick}>Predict</button>
       {prediction !== null && (
         <div>
           <h3>Prediction Result:</h3>

@@ -1,4 +1,5 @@
 from joblib import load
+from modulos import TextWordTokenizer,TextPreprocessor,TextStemLemmatizer,TokensToTextTransformer
 
 class Model:
 
