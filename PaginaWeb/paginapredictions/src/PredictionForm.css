@@ -7,13 +7,8 @@ div {
   }
   
   input {
-    width: 500px; /* Ancho del input al 80% del contenedor */
-    height: 500px; /* Ancho del input al 80% del contenedor */
     font-size: 18px; /* Tamaño de fuente para un párrafo */
-    padding: 10px;
-    margin: 10px 0;
-    resize: both; /* Permite ajuste de tamaño */
-    overflow: auto; /* Permite desplazamiento vertical */
+    margin: 30px 0;
   }
 
   textarea {
